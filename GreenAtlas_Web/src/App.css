@@ -1,0 +1,14 @@
+:root {
+  --bg: #d4dfd7;
+  --panel: #517156;
+  --panel-active: #364c39;
+  --text-main: #18231b;
+  --text-soft: #4f5f53;
+  --white: #f8fbf7;
+  --danger: #b52323;
+  --border: #cfd8ce;
+}
+
+#root {
+  min-height: 100vh;
+}
