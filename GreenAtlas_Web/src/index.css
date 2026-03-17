@@ -1,35 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
+@layer base {
+  body {
+    @apply antialiased bg-slate-50 text-slate-900;
+  }
 }
 
-:root {
-  --font-body: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
-  --font-heading: 'Poppins', 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+/* Your custom scrollbar for the GreenAtlas sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
 }
-
-html,
-body,
-#root {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100%;
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
-
-body {
-  font-family: var(--font-body);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #064e3b;
+  border-radius: 10px;
 }
