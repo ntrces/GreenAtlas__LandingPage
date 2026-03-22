@@ -4,13 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import { refreshAdminSession } from './auth/adminAuth'
+import PlantManagementPage from './pages/tabs/Plant Management/PlantManagementPage.jsx'
 
 await refreshAdminSession()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <PlantManagementPage />
     </BrowserRouter>
   </StrictMode>,
 )
