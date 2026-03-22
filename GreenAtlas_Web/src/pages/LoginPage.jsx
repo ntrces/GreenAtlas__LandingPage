@@ -37,11 +37,11 @@ function LoginPage() {
   }
 
   return (
-    <div className="grid min-h-screen place-items-center bg-[radial-gradient(circle_at_bottom_left,_#cfe1c9,_transparent_42%),_#d4dfd7] p-4">
-      <div className="flex w-full max-w-[448px] flex-col items-center justify-center gap-8">
+    <div className="grid min-h-screen place-items-center bg-[radial-gradient(circle_at_bottom_left,#cfe1c9,transparent_42%),#d4dfd7] p-4">
+      <div className="flex w-full max-w-md flex-col items-center justify-center gap-8">
         <div className="flex w-full flex-col items-center gap-3">
           <img className="h-14 w-14 object-contain" src={Logo} alt="GreenAtlas logo" />
-          <div className="text-center font-[var(--font-heading)] text-3xl leading-9 text-[#303d32]">
+          <div className="text-center font-(--font-heading) text-3xl leading-9 text-[#303d32]">
             Admin Portal
           </div>
         </div>
