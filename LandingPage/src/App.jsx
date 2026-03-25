@@ -218,34 +218,34 @@ const conservationStatuses = [
 
 const speciesCards = [
   {
-    name: 'Waling-waling Orchid',
-    latin: 'Vanda sanderiana',
+    name: 'Dao',
+    latin: 'Dracontomelon dao (Blanco) Merr. & Rolfe',
     image:
-      'https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=900&q=80',
+      'https://www.nparks.gov.sg/-/media/ffw/migrated/round2/flora/3287/ba0d492ac3434927bb2107068bc5af59.jpg',
   },
   {
-    name: 'Pitcher Plant',
-    latin: 'Nepenthes alata',
+    name: 'Kamagong/Mabolo',
+    latin: 'Diospyros discolor Wild.',
     image:
-      'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=900&q=80',
+      'https://tse3.mm.bing.net/th/id/OIP.FBUF9xYWyenBYbvnbg8mBwHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3',
   },
   {
-    name: 'Jade Vine',
-    latin: 'Strongylodon macrobotrys',
+    name: 'Narra',
+    latin: 'Pterocarpus indicus Wild.',
     image:
-      'https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&w=900&q=80',
+      'https://tse2.mm.bing.net/th/id/OIP.oXdgL96x0pdnkdmQKXXczAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
   },
   {
-    name: 'Rafflesia',
-    latin: 'Rafflesia schadenbergiana',
+    name: 'Molave',
+    latin: 'Vitex parviflora A.Juss.',
     image:
-      'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80',
+      'https://tropical.theferns.info/plantimages/sized/c/b/cb81a82860c10c3019dd890337e219362cc7c256_480px.jpg',
   },
 ]
 
 const stats = [
-  { value: '150+', label: 'Plant Species Documented' },
-  { value: '45+', label: 'Threatened Species Listed' },
+  { value: '199+', label: 'Plant Species Documented' },
+  { value: '19+', label: 'Threatened Species Listed' },
   { value: '3D', label: 'Interactive AR Models' },
 ]
 
@@ -462,9 +462,6 @@ function App() {
                     className="relative h-56 bg-cover bg-center"
                     style={{ backgroundImage: `url(${species.image})` }}
                   >
-                    <span className="absolute right-3 top-3 rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs font-semibold text-red-700">
-                      Critically Endangered
-                    </span>
                   </div>
                   <div className="p-5">
                     <h3 className="font-['Merriweather',serif] text-xl font-bold text-[#303d32]">
@@ -528,7 +525,7 @@ function App() {
             </p>
             <p className="mt-2 text-xs text-neutral-300">
               In partnership with the Department of Environment and Natural
-              Resources
+              Resources - Cavite 
             </p>
           </div>
 
@@ -541,38 +538,41 @@ function App() {
               <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
                 <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR Main Office</h4>
                 <p className="mt-4 text-xs text-neutral-300">Address</p>
-                <p className="text-sm">DENR Compound, Visayas Avenue</p>
-                <p className="text-sm">Diliman, Quezon City 1101</p>
+                <p className="text-sm">DENR Bldg. Visayas Avenue, Diliman</p>
+                <p className="text-sm">Quezon City Metro Manila 1100 Philippines</p>
                 <p className="mt-3 text-xs text-neutral-300">Phone</p>
-                <p className="text-sm">(02) 8929-6626</p>
-                <p className="text-sm">(02) 8929-4352</p>
+                <p className="text-sm">(02) 8925-8277</p>
+                <p className="text-sm">0939-918-0169</p>
+                 <p className="text-sm">0939-938-0876</p>
                 <p className="mt-3 text-xs text-neutral-300">Email</p>
-                <p className="text-sm">osec@denr.gov.ph</p>
-              </article>
-
-              <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
-                <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR CALABARZON</h4>
-                <p className="mt-4 text-xs text-neutral-300">Address</p>
-                <p className="text-sm">Rizal Avenue</p>
-                <p className="text-sm">Calamba City, Laguna</p>
-                <p className="mt-3 text-xs text-neutral-300">Phone</p>
-                <p className="text-sm">(049) 545-3570</p>
-                <p className="text-sm">(049) 545-3571</p>
-                <p className="mt-3 text-xs text-neutral-300">Office Hours</p>
-                <p className="text-sm">Mon-Fri: 8:00 AM - 5:00 PM</p>
+                <p className="text-sm">actioncenter@denr.gov.ph</p>
               </article>
 
               <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
                 <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR Cavite</h4>
                 <p className="mt-4 text-xs text-neutral-300">Address</p>
-                <p className="text-sm">DENR-PENRO Building</p>
-                <p className="text-sm">Trece Martires City, Cavite</p>
+                <p className="text-sm">Provincial Capitol Compound</p>
+                <p className="text-sm">Brgy.Gregorio, Trece Martires City, Cavite</p>
                 <p className="mt-3 text-xs text-neutral-300">Phone</p>
-                <p className="text-sm">(046) 419-1712</p>
-                <p className="text-sm">(046) 419-0562</p>
+                <p className="text-sm">(046) 430-5201</p>
+                <p className="text-sm">0939-224-9336</p>
                 <p className="mt-3 text-xs text-neutral-300">Email</p>
                 <p className="text-sm">penro.cavite@denr.gov.ph</p>
               </article>
+
+              <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
+                <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR CALABARZON</h4>
+                <p className="mt-4 text-xs text-neutral-300">Address</p>
+                <p className="text-sm">DENR CALABARZON Compound, Mayapa Main Road (Along SLEX)</p>
+                 <p className="text-sm">Barangay Mayapa Calamba City Laguna 4027 Philippines</p>
+                <p className="mt-3 text-xs text-neutral-300">Phone</p>
+                <p className="text-sm">(049) 540-DENR (3367) local 100</p>
+                <p className="text-sm">0945-621-5007</p>
+                <p className="text-sm">0908-334-0224</p>
+                <p className="mt-3 text-xs text-neutral-300">Email</p>
+                <p className="text-sm">r4a@denr.gov.ph</p>
+              </article>
+
             </div>
 
             <div className="mt-8 rounded-2xl border border-red-300 bg-[#82181a4c] p-6 text-center">
@@ -584,7 +584,7 @@ function App() {
                 environmental concerns
               </p>
               <p className="mt-3 font-['Merriweather',serif] text-4xl font-bold">8888</p>
-              <p className="mt-1 text-xs text-neutral-200">DENR Hotline - Available 24/7</p>
+              <p className="mt-1 text-xs text-neutral-200">DENR Hotline</p>
             </div>
           </div>
 

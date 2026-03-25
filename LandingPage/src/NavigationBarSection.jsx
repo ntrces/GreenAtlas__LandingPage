@@ -8,6 +8,10 @@ const navLinks = [
 ]
 
 export const NavigationBarSection = () => {
+  const scrollToTopSection = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const scrollToSection = (targetId) => {
     const section = document.getElementById(targetId)
     if (!section) return
@@ -20,7 +24,7 @@ export const NavigationBarSection = () => {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between">
         <button
           type="button"
-          onClick={() => scrollToSection('about')}
+          onClick={scrollToTopSection}
           className="flex items-center gap-2 text-left"
         >
           <img
