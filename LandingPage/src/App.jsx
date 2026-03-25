@@ -6,7 +6,7 @@ import logoImage from './assets/Logo.png'
 
 const featureCards = [
   {
-    title: 'Augmented Reality Plant Visualization',
+    title: 'Augmented Reality Plant Visualizaaation',
     description: 'View plant species in immersive AR directly on your mobile device',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
