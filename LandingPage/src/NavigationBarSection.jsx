@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import logoImage from './assets/Logo.png'
 
 const navLinks = [
@@ -8,11 +9,16 @@ const navLinks = [
 ]
 
 export const NavigationBarSection = () => {
+  const [activeTargetId, setActiveTargetId] = useState(null)
+
   const scrollToTopSection = () => {
+    setActiveTargetId(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const scrollToSection = (targetId) => {
+    setActiveTargetId(targetId)
+
     const section = document.getElementById(targetId)
     if (!section) return
 
@@ -25,7 +31,7 @@ export const NavigationBarSection = () => {
         <button
           type="button"
           onClick={scrollToTopSection}
-          className="flex items-center gap-2 text-left"
+          className="flex items-center gap-2 text-left cursor-pointer"
         >
           <img
             className="h-10 w-11.75"
@@ -45,7 +51,24 @@ export const NavigationBarSection = () => {
               key={link.label}
               type="button"
               onClick={() => scrollToSection(link.targetId)}
-              className="h-9 whitespace-nowrap text-sm text-neutral-700 transition-colors hover:text-[#3c5a41]"
+              aria-current={activeTargetId === link.targetId ? 'page' : undefined}
+              className="h-9 whitespace-nowrap px-1 text-sm transition-colors cursor-pointer"
+              style={{
+                borderBottom: activeTargetId === link.targetId ? '2px solid #3c5a41' : '2px solid transparent',
+                color: activeTargetId === link.targetId ? '#2d4632' : '#737373',
+              }}
+              onMouseEnter={(e) => {
+                if (activeTargetId !== link.targetId) {
+                  e.currentTarget.style.borderBottomColor = '#3c5a41'
+                  e.currentTarget.style.color = '#3c5a41'
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeTargetId !== link.targetId) {
+                  e.currentTarget.style.borderBottomColor = 'transparent'
+                  e.currentTarget.style.color = '#737373'
+                }
+              }}
             >
               {link.label}
             </button>
@@ -56,9 +79,9 @@ export const NavigationBarSection = () => {
             onClick={() => {
               window.location.href = '/download'
             }}
-            className="h-9 rounded-full bg-[#517156] px-4 text-sm text-white"
+            className="h-9 rounded-full bg-[#517156] px-4 text-sm text-white cursor-pointer transition-colors hover:bg-[#3c5a41]"
           >
-            Explore Now
+            Download Now
           </button>
         </nav>
       </div>

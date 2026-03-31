@@ -53,7 +53,7 @@ export default function DownloadPage() {
             onClick={() => {
               window.location.href = '/'
             }}
-            className="rounded-md border border-[#303d3226] bg-[#e5f5e8] px-4 py-2 text-sm text-[#303d32]"
+            className="rounded-md border border-[#303d3226] bg-[#e5f5e8] px-4 py-2 text-sm text-[#303d32] cursor-pointer transition-colors hover:bg-[#d4e8d1]"
           >
             Back to Home
           </button>
