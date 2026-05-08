@@ -9,7 +9,7 @@ import logoImage from './assets/Logo.png'
 
 const featureCards = [
   {
-    title: 'Augmented Reality Plant Visualizaaation',
+    title: 'Augmented Reality Plant Visualization',
     description: 'View plant species in immersive AR directly on your mobile device',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -453,7 +453,7 @@ function App() {
 
         <section
           id="ar-gallery"
-          className="scroll-mt-28 bg-linear-to-b from-[#b6c6b8] to-[#f8faf8] px-4 py-16 md:px-8 md:py-24"
+          className="scroll-mt-15 bg-linear-to-b from-[#b6c6b8] to-[#f8faf8] px-4 py-16 md:px-8 md:py-24"
         >
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start">
             <div className="h-130 rounded-3xl bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${arGalleryImage})` }} />
@@ -486,7 +486,7 @@ function App() {
 
         <section
           id="conservation"
-          className="scroll-mt-28 bg-white px-4 py-16 md:px-8 md:py-24"
+          className="scroll-mt-5 bg-white px-4 py-16 md:px-8 md:py-24"
         >
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto max-w-4xl text-center">
