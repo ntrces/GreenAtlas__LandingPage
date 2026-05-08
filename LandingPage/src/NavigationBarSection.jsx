@@ -2,6 +2,7 @@ import logoImage from './assets/Logo.png'
 
 const navLinks = [
   { label: 'About', targetId: 'about' },
+  { label: 'Announcements', targetId: 'announcements' },
   { label: 'AR Gallery', targetId: 'ar-gallery' },
   { label: 'Conservation', targetId: 'conservation' },
   { label: 'Species', targetId: 'species' },
