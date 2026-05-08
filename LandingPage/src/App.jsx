@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react'
 import { NavigationBarSection } from './NavigationBarSection'
+import { supabase } from './supabaseClient'
+
 import arImage from './assets/ar.jpg'
 import arGalleryImage from './assets/ARGallery.jpeg'
 import palaypalayImage from './assets/Palaypalay.jpg'
@@ -249,7 +252,59 @@ const stats = [
   { value: '3D', label: 'Interactive AR Models' },
 ]
 
+// Static fallback data (used if database is empty or loading fails)
+const fallbackAnnouncements = [
+  {
+    headline_title: 'Community Tree Planting Activity',
+    event_date: 'May 25, 2026',
+    content: 'Join us for our annual community tree planting event to help restore the local ecosystem and promote biodiversity in Cavite Protected Area.',
+    location: 'Cavite Protected Area - Main Entrance',
+    contact: 'denr.cavite@gov.ph | (046) 430-5201',
+  },
+  {
+    headline_title: 'AR Botanical Gallery Workshop',
+    event_date: 'June 10, 2026',
+    content: 'A hands-on workshop on how to use the GreenAtlas AR app for plant identification and learning about local flora.',
+    location: 'Trece Martires City Hall - Conference Room',
+    contact: 'greenatlas.support@email.com',
+  },
+]
+
+
+
+
 function App() {
+  const [announcements, setAnnouncements] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchAnnouncements()
+  }, [])
+
+  const fetchAnnouncements = async () => {
+    try {
+      setLoading(true)
+      const { data, error } = await supabase
+        .from('announcements')
+        .select('*')
+        .eq('is_archived', false)
+        .order('created_at', { ascending: false })
+
+      if (error) throw error
+      
+      if (data && data.length > 0) {
+        setAnnouncements(data)
+      } else {
+        setAnnouncements(fallbackAnnouncements)
+      }
+    } catch (error) {
+      console.error('Error fetching announcements:', error)
+      setAnnouncements(fallbackAnnouncements)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const goToDownloadPage = () => {
     window.location.href = '/download'
   }
@@ -327,6 +382,74 @@ function App() {
             </div>
           </div>
         </section>
+
+        <section id="announcements" className="scroll-mt-28 bg-[#f8faf8] px-4 py-16 md:px-8 md:py-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-4xl text-center">
+              <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32]">
+                Announcements
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-neutral-600">
+                Stay updated with the latest events, workshops, and activities organized by GreenAtlas and DENR-Cavite.
+              </p>
+            </div>
+
+            <div className="mt-12 flex flex-wrap justify-center gap-8">
+              {loading ? (
+                <div className="col-span-full py-20 text-center">
+                  <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-[#517156] border-t-transparent" />
+                  <p className="mt-4 text-neutral-500">Fetching latest announcements...</p>
+                </div>
+              ) : announcements.length > 0 ? (
+                announcements.map((announcement, index) => (
+                  <article
+                    key={index}
+                    className="group relative w-full md:w-[calc(50%-1rem)] max-w-2xl overflow-hidden rounded-3xl border border-[#51715622] bg-white p-8 shadow-sm transition-all hover:shadow-md"
+                  >
+                    <div className="absolute top-0 left-0 h-1.5 w-full bg-[#517156]" />
+                    <div className="flex flex-col h-full">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-semibold text-[#517156] uppercase tracking-wider">
+                          Upcoming Event
+                        </span>
+                        <span className="text-sm text-neutral-400">{announcement.event_date || announcement.date}</span>
+                      </div>
+                      
+                      <h3 className="mt-4 font-['Merriweather',serif] text-2xl font-bold text-[#303d32] group-hover:text-[#517156] transition-colors">
+                        {announcement.headline_title || announcement.title}
+                      </h3>
+                      
+                      <p className="mt-4 flex-grow text-base leading-relaxed text-neutral-600">
+                        {announcement.content}
+                      </p>
+                      
+                      <div className="mt-8 pt-6 border-t border-neutral-100 space-y-3">
+                        <div className="flex items-start gap-3">
+                          <svg className="mt-1 h-5 w-5 shrink-0 text-[#517156]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <span className="text-sm font-medium text-neutral-700">{announcement.location}</span>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <svg className="mt-1 h-5 w-5 shrink-0 text-[#517156]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <span className="text-sm text-neutral-500">{announcement.contact}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))
+              ) : (
+                <div className="col-span-full py-20 text-center">
+                  <p className="text-lg text-neutral-500">No announcements at the moment. Check back later!</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
 
         <section
           id="ar-gallery"
