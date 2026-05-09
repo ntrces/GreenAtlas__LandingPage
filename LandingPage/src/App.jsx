@@ -9,7 +9,7 @@ import logoImage from './assets/Logo.png'
 
 const featureCards = [
   {
-    title: 'Augmented Reality Plant Visualizaaation',
+    title: 'Augmented Reality Plant Visualization',
     description: 'View plant species in immersive AR directly on your mobile device',
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -316,30 +316,29 @@ function App() {
       <main>
         <section className="bg-linear-to-b from-[#88a08b] via-[#a8baab] to-[#88a08b] px-4 py-10 md:px-8 md:py-16">
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
-            <div className="text-center md:text-left">
-              <span className="inline-flex rounded-full bg-white/80 px-4 py-1 text-xs md:text-sm text-[#517156] shadow">
+            <div>
+              <span className="inline-flex rounded-full bg-white/80 px-4 py-1 text-sm text-[#517156] shadow">
                 AR Botanical Education Platform
               </span>
-              <h1 className="mt-5 font-['Merriweather',serif] text-3xl font-bold leading-tight text-[#2f3d31] md:text-6xl">
+              <h1 className="mt-5 font-['Merriweather',serif] text-4xl font-bold leading-tight text-[#2f3d31] md:text-6xl">
                 Explore Plants Through
                 <span className="block text-[#517156]">Augmented Reality</span>
               </h1>
-              <p className="mt-5 mx-auto md:mx-0 max-w-xl text-sm leading-relaxed text-[#33453a] md:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-7 text-[#33453a] md:text-lg">
                 Discover plant species found in protected areas and learn about
                 scientific characteristics, habitats, and conservation status
                 through an immersive AR botanical gallery.
               </p>
               <button
                 onClick={goToDownloadPage}
-                className="mt-7 rounded-full bg-[#517156] px-6 py-2 text-sm font-medium text-white shadow-lg w-full md:w-auto"
+                className="mt-7 rounded-full bg-[#517156] px-6 py-2 text-sm font-medium text-white shadow-lg"
               >
                 Explore the AR Botanical Gallery
               </button>
             </div>
 
-
-            <div className="relative mt-8 md:mt-0">
-              <div className="h-64 md:h-130 rounded-3xl bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${arImage})` }} />
+            <div className="relative">
+              <div className="h-130 rounded-3xl bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${arImage})` }} />
               <div className="absolute -bottom-5 left-4 rounded-2xl bg-white px-4 py-3 shadow-xl">
                 <p className="text-xs text-neutral-500">Interactive AR</p>
                 <p className="font-['Merriweather',serif] text-base font-bold text-[#303d32]">
@@ -350,32 +349,32 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="scroll-mt-28 bg-white px-4 py-16 md:px-8 md:py-24">
+        <section id="about" className="scroll-mt-20 bg-white px-4 py-8 md:scroll-mt-28 md:px-8 md:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto max-w-4xl text-center">
-              <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32]">
+              <h2 className="font-['Merriweather',serif] text-2xl font-bold text-[#303d32] md:text-4xl">
                 About GreenAtlas
               </h2>
-              <p className="mt-5 text-lg leading-8 text-neutral-600">
+              <p className="mt-3 text-xs leading-6 text-neutral-600 md:mt-5 md:text-base md:leading-8">
                 GreenAtlas is an educational platform that presents plant species
                 from Cavite Protected Area using immersive augmented reality and
                 science-backed ecological context.
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-6 grid gap-4 md:mt-12 md:gap-6 xl:grid-cols-4 md:grid-cols-2">
               {featureCards.map((card) => (
                 <article
                   key={card.title}
-                  className="rounded-2xl border border-neutral-200 bg-white p-6 text-center"
+                  className="rounded-2xl border border-neutral-200 bg-white p-4 text-center md:p-6"
                 >
-                  <div className="mx-auto mb-4 flex h-15 w-15 items-center justify-center rounded-full bg-[#5171561a]">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#5171561a] md:h-15 md:w-15 md:mb-4">
                     {card.icon}
                   </div>
-                  <h3 className="font-['Merriweather',serif] text-lg font-bold text-[#303d32]">
+                  <h3 className="font-['Merriweather',serif] text-sm font-bold text-[#303d32] md:text-base lg:text-lg">
                     {card.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-neutral-600">
+                  <p className="mt-2 text-xs leading-5 text-neutral-600 md:mt-3 md:text-sm md:leading-6">
                     {card.description}
                   </p>
                 </article>
@@ -454,30 +453,30 @@ function App() {
 
         <section
           id="ar-gallery"
-          className="scroll-mt-28 bg-linear-to-b from-[#b6c6b8] to-[#f8faf8] px-4 py-16 md:px-8 md:py-24"
+          className="scroll-mt-12 bg-linear-to-b from-[#b6c6b8] to-[#f8faf8] px-4 py-8 md:scroll-mt-15 md:px-8 md:py-24"
         >
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start">
-            <div className="h-64 md:h-130 rounded-3xl bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${arGalleryImage})` }} />
+            <div className="h-130 rounded-3xl bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${arGalleryImage})` }} />
 
             <div>
-              <h2 className="font-['Merriweather',serif] text-3xl md:text-4xl font-bold text-[#303d32]">
+              <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32]">
                 AR Botanical Gallery
               </h2>
-              <p className="mt-4 text-base md:text-lg leading-relaxed text-neutral-600">
+              <p className="mt-4 text-lg leading-8 text-neutral-600">
                 Explore plant species in interactive augmented reality and access
                 detailed plant profiles with comprehensive botanical information.
               </p>
 
 
-              <div className="mt-8 space-y-4">
+              <div className="mt-4 space-y-3 md:mt-8 md:space-y-4">
                 {galleryDetails.map((item) => (
-                  <div key={item.title} className="flex gap-3">
-                    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center text-[#517156]">
+                  <div key={item.title} className="flex gap-2 md:gap-3">
+                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-[#517156] md:h-6 md:w-6 md:mt-1">
                       {item.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#303d32]">{item.title}</h3>
-                      <p className="text-sm text-neutral-600">{item.text}</p>
+                      <h3 className="text-xs font-semibold text-[#303d32] md:text-base">{item.title}</h3>
+                      <p className="text-xs text-neutral-600 md:text-sm">{item.text}</p>
                     </div>
                   </div>
                 ))}
@@ -488,14 +487,14 @@ function App() {
 
         <section
           id="conservation"
-          className="scroll-mt-28 bg-white px-4 py-16 md:px-8 md:py-24"
+          className="scroll-mt-5 bg-white px-4 py-8 md:px-8 md:py-24"
         >
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto max-w-4xl text-center">
-              <h2 className="font-['Merriweather',serif] text-3xl md:text-4xl font-bold text-[#303d32]">
+              <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32]">
                 Understanding Plant Conservation
               </h2>
-              <p className="mt-5 text-sm md:text-base leading-relaxed text-neutral-600">
+              <p className="mt-5 text-m leading-8 text-neutral-600">
                 Many plant species found in protected areas are classified under
                 different conservation statuses. Understanding these
                 classifications helps people recognize which plants require
@@ -504,22 +503,22 @@ function App() {
 
             </div>
 
-            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-6 grid gap-3 md:mt-12 md:gap-5 md:grid-cols-2 xl:grid-cols-3">
               {conservationStatuses.map((status) => (
                 <article
                   key={status.name}
                   className="overflow-hidden rounded-2xl border border-[#303d3226] bg-white shadow-xs"
                 >
-                  <div className={`h-1.5 ${status.accent}`} />
-                  <div className="p-5">
-                    <div className="flex items-start justify-between gap-3">
+                  <div className={`h-1 md:h-1.5 ${status.accent}`} />
+                  <div className="p-3 md:p-5">
+                    <div className="flex items-start justify-between gap-2 md:gap-3">
                       <span
-                        className={`inline-flex rounded-md border px-3 py-1 text-sm font-semibold ${status.tone}`}
+                        className={`inline-flex rounded-md border px-2 py-0.5 text-xs font-semibold ${status.tone} md:px-3 md:py-1 md:text-sm`}
                       >
                         {status.name}
                       </span>
                       <svg
-                        className={`mt-0.5 h-4 w-4 shrink-0 ${status.iconTone}`}
+                        className={`mt-0.5 h-3 w-3 shrink-0 ${status.iconTone} md:h-4 md:w-4`}
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -548,7 +547,7 @@ function App() {
                         />
                       </svg>
                     </div>
-                    <p className="mt-4 text-sm leading-6 text-neutral-600">
+                    <p className="mt-2 text-xs leading-5 text-neutral-600 md:mt-4 md:text-sm md:leading-6">
                       {status.description}
                     </p>
                   </div>
@@ -557,7 +556,7 @@ function App() {
             </div>
 
             <div
-              className="mt-12 h-48 md:h-70 rounded-3xl bg-cover bg-center shadow-2xl"
+              className="mt-12 h-70 rounded-3xl bg-cover bg-center shadow-2xl"
               style={{ backgroundImage: `url(${palaypalayImage})` }}
             />
           </div>
@@ -565,52 +564,52 @@ function App() {
 
         <section
           id="species"
-          className="scroll-mt-28 bg-linear-to-b from-white to-[#e5f1e8] px-4 py-16 md:px-8 md:py-24"
+          className="scroll-mt-20 bg-linear-to-b from-white to-[#e5f1e8] px-4 py-8 md:scroll-mt-28 md:px-8 md:py-24"
         >
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto max-w-4xl text-center">
-              <h2 className="font-['Merriweather',serif] text-3xl md:text-4xl font-bold text-[#303d32]">
+              <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32]">
                 Featured Plant Species
               </h2>
-              <p className="mt-5 text-sm md:text-base leading-relaxed text-neutral-600">
+              <p className="mt-5 text-m leading-8 text-neutral-600">
                 Learning about threatened plant species promotes appreciation for
                 biodiversity and the ecosystems that support them.
               </p>
 
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-6 grid gap-4 md:mt-12 md:gap-6 md:grid-cols-2 xl:grid-cols-4">
               {speciesCards.map((species) => (
                 <article
                   key={species.name}
                   className="overflow-hidden rounded-2xl border border-neutral-200 bg-white"
                 >
                   <div
-                    className="relative h-56 bg-cover bg-center"
+                    className="relative h-40 bg-cover bg-center md:h-56"
                     style={{ backgroundImage: `url(${species.image})` }}
                   >
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-['Merriweather',serif] text-xl font-bold text-[#303d32]">
+                  <div className="p-3 md:p-5">
+                    <h3 className="font-['Merriweather',serif] text-base font-bold text-[#303d32] md:text-xl">
                       {species.name}
                     </h3>
-                    <p className="mt-1 text-sm italic text-neutral-600">{species.latin}</p>
+                    <p className="mt-1 text-xs italic text-neutral-600 md:text-sm">{species.latin}</p>
                   </div>
                 </article>
               ))}
             </div>
 
-            <div className="mt-12 rounded-3xl border border-[#51715633] bg-white p-8 text-center shadow-xl md:p-12">
-                <div className="mx-auto flex h-18 w-18 items-center justify-center rounded-full bg-[#f1f4ef]">
+            <div className="mt-6 rounded-2xl border border-[#51715633] bg-white p-4 text-center shadow-xl md:mt-12 md:rounded-3xl md:p-8 lg:p-12">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#f1f4ef] md:h-18 md:w-18">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16 9.3335V28.0002" stroke="#517156" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M4.00002 24C3.6464 24 3.30726 23.8595 3.05721 23.6095C2.80716 23.3594 2.66669 23.0203 2.66669 22.6667V5.33333C2.66669 4.97971 2.80716 4.64057 3.05721 4.39052C3.30726 4.14048 3.6464 4 4.00002 4H10.6667C12.0812 4 13.4377 4.5619 14.4379 5.5621C15.4381 6.56229 16 7.91885 16 9.33333C16 7.91885 16.5619 6.56229 17.5621 5.5621C18.5623 4.5619 19.9189 4 21.3334 4H28C28.3536 4 28.6928 4.14048 28.9428 4.39052C29.1929 4.64057 29.3334 4.97971 29.3334 5.33333V22.6667C29.3334 23.0203 29.1929 23.3594 28.9428 23.6095C28.6928 23.8595 28.3536 24 28 24H20C18.9392 24 17.9217 24.4214 17.1716 25.1716C16.4214 25.9217 16 26.9391 16 28C16 26.9391 15.5786 25.9217 14.8284 25.1716C14.0783 24.4214 13.0609 24 12 24H4.00002Z" stroke="#517156" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
               </div>
-              <h3 className="font-['Merriweather',serif] text-2xl md:text-3xl font-bold text-[#303d32] mt-5">
+              <h3 className="font-['Merriweather',serif] text-3xl font-bold text-[#303d32] mt-5">
                 Discover More Plant Species
               </h3>
-              <p className="mx-auto mt-4 max-w-3xl text-sm md:text-base text-neutral-600">
+              <p className="mx-auto mt-4 max-w-3xl text-m text-neutral-600">
                 Explore our complete botanical database featuring hundreds of plant 
                 species from  Cavite Protected Areas, each with detailed AR models 
                 and scientific information.
@@ -618,7 +617,7 @@ function App() {
 
               <button
                 onClick={goToDownloadPage}
-                className="mt-6 rounded-full bg-[#517156] px-6 py-2 text-sm font-medium text-white shadow-lg"
+                className="mt-3 rounded-full bg-[#517156] px-4 py-1.5 text-xs font-medium text-white shadow-lg transition-colors hover:bg-[#3c5a41] md:mt-6 md:px-6 md:py-2 md:text-sm"
               >
                 Install Now
               </button>
@@ -626,14 +625,14 @@ function App() {
           </div>
         </section>
 
-        <section className="bg-[#303d32] px-4 py-14 md:px-8">
-          <div className="mx-auto grid max-w-6xl gap-8 text-center md:grid-cols-3">
+        <section className="bg-[#303d32] px-4 py-8 md:px-8 md:py-14">
+          <div className="mx-auto grid max-w-6xl gap-4 text-center md:gap-8 md:grid-cols-3">
             {stats.map((stat) => (
-              <div key={stat.label} className="py-4 md:py-0">
-                <p className="font-['Merriweather',serif] text-4xl md:text-5xl font-bold text-[#8cac91]">
+              <div key={stat.label}>
+                <p className="font-['Merriweather',serif] text-5xl font-bold text-[#8cac91]">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm md:text-base text-neutral-300">{stat.label}</p>
+                <p className="mt-2 text-base text-neutral-300">{stat.label}</p>
               </div>
             ))}
 
@@ -641,83 +640,83 @@ function App() {
         </section>
       </main>
 
-      <footer className="bg-[#517156] px-4 py-16 text-white md:px-8">
+      <footer className="bg-[#517156] px-4 py-8 text-white md:px-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-3">
-              <img src={logoImage} alt="GreenAtlas logo" className="h-14 w-14 rounded-full bg-white object-cover" />
-              <h2 className="font-['Poppins',Helvetica] text-3xl font-semibold">GreenAtlas</h2>
+            <div className="flex items-center justify-center gap-2 md:gap-3">
+              <img src={logoImage} alt="GreenAtlas logo" className="h-10 w-10 rounded-full bg-white object-cover md:h-14 md:w-14" />
+              <h2 className="font-['Poppins',Helvetica] text-xl font-semibold md:text-3xl">GreenAtlas</h2>
             </div>
-            <p className="mt-3 text-sm text-neutral-200">
+            <p className="mt-2 text-xs text-neutral-200 md:mt-3 md:text-sm">
               Exploring plant biodiversity through augmented reality and science
               education
             </p>
-            <p className="mt-2 text-xs text-neutral-300">
+            <p className="mt-1 text-xs text-neutral-300 md:mt-2">
               In partnership with the Department of Environment and Natural
               Resources - Cavite 
             </p>
           </div>
 
-          <div className="mt-10 border-t border-white/20 pt-10">
-            <h3 className="text-center font-['Merriweather',serif] text-2xl font-bold">
+          <div className="mt-6 border-t border-white/20 pt-6 md:mt-10 md:pt-10">
+            <h3 className="text-center font-['Merriweather',serif] text-lg font-bold md:text-2xl">
               DENR Contact Information
             </h3>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
-                <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR Main Office</h4>
-                <p className="mt-4 text-xs text-neutral-300">Address</p>
-                <p className="text-sm">DENR Bldg. Visayas Avenue, Diliman</p>
-                <p className="text-sm">Quezon City Metro Manila 1100 Philippines</p>
-                <p className="mt-3 text-xs text-neutral-300">Phone</p>
-                <p className="text-sm">(02) 8925-8277</p>
-                <p className="text-sm">0939-918-0169</p>
-                 <p className="text-sm">0939-938-0876</p>
-                <p className="mt-3 text-xs text-neutral-300">Email</p>
-                <p className="text-sm">actioncenter@denr.gov.ph</p>
+            <div className="mt-4 grid gap-3 md:mt-8 md:gap-6 md:grid-cols-3">
+              <article className="rounded-xl border border-white/20 bg-white/10 p-3 md:rounded-2xl md:p-6">
+                <h4 className="font-['Merriweather',serif] text-sm font-bold md:text-lg">DENR Main Office</h4>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-4">Address</p>
+                <p className="text-xs md:text-sm">DENR Bldg. Visayas Avenue, Diliman</p>
+                <p className="text-xs md:text-sm">Quezon City Metro Manila 1100 Philippines</p>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-3">Phone</p>
+                <p className="text-xs md:text-sm">(02) 8925-8277</p>
+                <p className="text-xs md:text-sm">0939-918-0169</p>
+                 <p className="text-xs md:text-sm">0939-938-0876</p>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-3">Email</p>
+                <p className="text-xs md:text-sm">actioncenter@denr.gov.ph</p>
               </article>
 
-              <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
-                <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR Cavite</h4>
-                <p className="mt-4 text-xs text-neutral-300">Address</p>
-                <p className="text-sm">Provincial Capitol Compound</p>
-                <p className="text-sm">Brgy.Gregorio, Trece Martires City, Cavite</p>
-                <p className="mt-3 text-xs text-neutral-300">Phone</p>
-                <p className="text-sm">(046) 430-5201</p>
-                <p className="text-sm">0939-224-9336</p>
-                <p className="mt-3 text-xs text-neutral-300">Email</p>
-                <p className="text-sm">penro.cavite@denr.gov.ph</p>
+              <article className="rounded-xl border border-white/20 bg-white/10 p-3 md:rounded-2xl md:p-6">
+                <h4 className="font-['Merriweather',serif] text-sm font-bold md:text-lg">DENR Cavite</h4>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-4">Address</p>
+                <p className="text-xs md:text-sm">Provincial Capitol Compound</p>
+                <p className="text-xs md:text-sm">Brgy.Gregorio, Trece Martires City, Cavite</p>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-3">Phone</p>
+                <p className="text-xs md:text-sm">(046) 430-5201</p>
+                <p className="text-xs md:text-sm">0939-224-9336</p>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-3">Email</p>
+                <p className="text-xs md:text-sm">penro.cavite@denr.gov.ph</p>
               </article>
 
-              <article className="rounded-2xl border border-white/20 bg-white/10 p-6">
-                <h4 className="font-['Merriweather',serif] text-lg font-bold">DENR CALABARZON</h4>
-                <p className="mt-4 text-xs text-neutral-300">Address</p>
-                <p className="text-sm">DENR CALABARZON Compound, Mayapa Main Road (Along SLEX)</p>
-                 <p className="text-sm">Barangay Mayapa Calamba City Laguna 4027 Philippines</p>
-                <p className="mt-3 text-xs text-neutral-300">Phone</p>
-                <p className="text-sm">(049) 540-DENR (3367) local 100</p>
-                <p className="text-sm">0945-621-5007</p>
-                <p className="text-sm">0908-334-0224</p>
-                <p className="mt-3 text-xs text-neutral-300">Email</p>
-                <p className="text-sm">r4a@denr.gov.ph</p>
+              <article className="rounded-xl border border-white/20 bg-white/10 p-3 md:rounded-2xl md:p-6">
+                <h4 className="font-['Merriweather',serif] text-sm font-bold md:text-lg">DENR CALABARZON</h4>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-4">Address</p>
+                <p className="text-xs md:text-sm">DENR CALABARZON Compound, Mayapa Main Road (Along SLEX)</p>
+                 <p className="text-xs md:text-sm">Barangay Mayapa Calamba City Laguna 4027 Philippines</p>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-3">Phone</p>
+                <p className="text-xs md:text-sm">(049) 540-DENR (3367) local 100</p>
+                <p className="text-xs md:text-sm">0945-621-5007</p>
+                <p className="text-xs md:text-sm">0908-334-0224</p>
+                <p className="mt-2 text-xs text-neutral-300 md:mt-3">Email</p>
+                <p className="text-xs md:text-sm">r4a@denr.gov.ph</p>
               </article>
 
             </div>
 
-            <div className="mt-8 rounded-2xl border border-red-300 bg-[#82181a4c] p-6 text-center">
-              <p className="font-['Merriweather',serif] text-xl font-bold">
+            <div className="mt-4 rounded-lg border border-red-300 bg-[#82181a4c] p-3 text-center md:mt-8 md:rounded-2xl md:p-6">
+              <p className="font-['Merriweather',serif] text-base font-bold md:text-xl">
                 Report Environmental Violations
               </p>
-              <p className="mt-2 text-sm text-neutral-200">
+              <p className="mt-1 text-xs text-neutral-200 md:mt-2 md:text-sm">
                 For illegal logging, wildlife trafficking, and urgent
                 environmental concerns
               </p>
-              <p className="mt-3 font-['Merriweather',serif] text-4xl font-bold">8888</p>
-              <p className="mt-1 text-xs text-neutral-200">DENR Hotline</p>
+              <p className="mt-2 font-['Merriweather',serif] text-2xl font-bold md:mt-3 md:text-4xl">8888</p>
+              <p className="mt-0.5 text-xs text-neutral-200 md:mt-1">DENR Hotline</p>
             </div>
           </div>
 
-          <p className="mt-10 border-t border-white/20 pt-8 text-center text-sm text-neutral-200">
+          <p className="mt-6 border-t border-white/20 pt-4 text-center text-xs text-neutral-200 md:mt-10 md:pt-8 md:text-sm">
             © 2026 GreenAtlas. Promoting plant biodiversity awareness and
             conservation education.
           </p>
