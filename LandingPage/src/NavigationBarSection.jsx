@@ -26,33 +26,33 @@ export const NavigationBarSection = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-[#fffffff2] px-4 backdrop-blur-sm md:px-16">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-[#fffffff2] px-2 backdrop-blur-sm sm:px-3 md:px-16">
+      <div className="mx-auto flex h-12 w-full max-w-6xl items-center justify-between gap-2 sm:h-14 md:h-16 md:gap-4">
         <button
           type="button"
           onClick={scrollToTopSection}
-          className="flex items-center gap-2 text-left cursor-pointer"
+          className="flex flex-shrink-0 items-center gap-0.5 text-left cursor-pointer sm:gap-1 md:gap-2"
         >
           <img
-            className="h-10 w-11.75"
+            className="h-7 w-8 sm:h-8 sm:w-9 md:h-10 md:w-11.75"
             alt="GreenAtlas logo"
             src={logoImage}
           />
-          <div className="flex flex-col">
-            <div className="font-['Poppins',Helvetica] text-lg font-semibold leading-7 text-[#303d32] whitespace-nowrap">
+          <div className="hidden sm:flex flex-col">
+            <div className="font-['Poppins',Helvetica] text-xs font-semibold leading-4 text-[#303d32] whitespace-nowrap sm:text-sm sm:leading-5 md:text-base md:leading-7">
                 GreenAtlas
             </div>
           </div>
         </button>
 
-        <nav className="flex items-center gap-4 overflow-x-auto md:gap-8">
+        <nav className="flex flex-shrink items-center gap-0.5 overflow-x-auto sm:gap-1 md:gap-6">
           {navLinks.map((link) => (
             <button
               key={link.label}
               type="button"
               onClick={() => scrollToSection(link.targetId)}
               aria-current={activeTargetId === link.targetId ? 'page' : undefined}
-              className="h-9 whitespace-nowrap px-1 text-sm transition-colors cursor-pointer"
+              className="h-8 flex-shrink-0 whitespace-nowrap px-0.5 text-xs transition-colors cursor-pointer sm:px-1 sm:text-xs md:h-9 md:px-2 md:text-sm"
               style={{
                 borderBottom: activeTargetId === link.targetId ? '2px solid #3c5a41' : '2px solid transparent',
                 color: activeTargetId === link.targetId ? '#2d4632' : '#737373',
@@ -79,7 +79,7 @@ export const NavigationBarSection = () => {
             onClick={() => {
               window.location.href = '/download'
             }}
-            className="h-9 rounded-full bg-[#517156] px-4 text-sm text-white cursor-pointer transition-colors hover:bg-[#3c5a41]"
+            className="h-7 flex-shrink-0 rounded-full bg-[#517156] px-2 text-xs font-medium text-white cursor-pointer transition-colors hover:bg-[#3c5a41] sm:h-8 sm:px-2.5 sm:text-xs md:h-9 md:px-4 md:text-sm"
           >
             Download Now
           </button>

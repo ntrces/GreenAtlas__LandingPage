@@ -42,68 +42,68 @@ const featuresData = [
 export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-white">
-      <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 px-6 py-3 backdrop-blur md:px-10">
+      <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur md:px-10 md:py-3">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <div className="flex items-center gap-2">
-            <img className="h-10 w-12 object-contain" alt="GreenAtlas logo" src={Logo} />
-            <h1 className="font-['Poppins',Helvetica] text-lg font-semibold text-[#303d32]">GreenAtlas</h1>
+            <img className="h-8 w-10 object-contain md:h-10 md:w-12" alt="GreenAtlas logo" src={Logo} />
+            <h1 className="font-['Poppins',Helvetica] text-base font-semibold text-[#303d32] md:text-lg">GreenAtlas</h1>
           </div>
 
           <button
             onClick={() => {
               window.location.href = '/'
             }}
-            className="rounded-md border border-[#303d3226] bg-[#e5f5e8] px-4 py-2 text-sm text-[#303d32] cursor-pointer transition-colors hover:bg-[#d4e8d1]"
+            className="rounded-md border border-[#303d3226] bg-[#e5f5e8] px-3 py-1.5 text-xs font-medium text-[#303d32] cursor-pointer transition-colors hover:bg-[#d4e8d1] md:px-4 md:py-2 md:text-sm"
           >
             Back to Home
           </button>
         </div>
       </header>
 
-      <main className="bg-linear-to-b from-[#e5f5e8] via-white to-[#e5f5e8] px-6 py-16 md:px-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-14">
+      <main className="bg-linear-to-b from-[#e5f5e8] via-white to-[#e5f5e8] px-4 py-8 md:px-10 md:py-16">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 md:gap-14">
           <section className="text-center">
-            <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32] md:text-5xl">
+            <h2 className="font-['Merriweather',serif] text-2xl font-bold text-[#303d32] md:text-4xl lg:text-5xl">
               Download GreenAtlas App
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-neutral-600 md:mt-6 md:text-base md:leading-8">
               Experience the full power of AR botanical exploration on your mobile device. Download the GreenAtlas app for Android.
             </p>
           </section>
 
-          <section className="w-full rounded-2xl border border-neutral-200 bg-white p-6 text-center md:p-10">
-            <svg className="mx-auto block" width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <section className="w-full rounded-2xl border border-neutral-200 bg-white p-4 text-center md:p-10">
+            <svg className="mx-auto block" width="80" height="80" md:width="128" md:height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="128" height="128" fill="white" fill-opacity="0.6"/>
 <path d="M64.0001 64V96M64.0001 96L80.0001 85.3333M64.0001 96L48.0001 85.3333M69.3334 16H43.7334C37.7601 16 34.7734 16 32.4907 17.1627C30.4838 18.1853 28.852 19.817 27.8294 21.824C26.6667 24.1067 26.6667 27.0933 26.6667 33.0667V94.9333C26.6667 100.907 26.6667 103.893 27.8294 106.176C28.852 108.183 30.4838 109.815 32.4907 110.837C34.7681 112 37.7547 112 43.7174 112H84.2827C90.2454 112 93.2267 112 95.5041 110.837C97.5147 109.813 99.1467 108.181 100.171 106.176C101.333 103.893 101.333 100.917 101.333 94.9547V48M69.3334 16C70.8587 16.016 71.8187 16.0747 72.7414 16.2933C73.8365 16.56 74.8641 16.9867 75.8241 17.5733C76.9014 18.2347 77.8241 19.1573 79.6641 21.0027L96.3361 37.6693C98.1814 39.5147 99.0987 40.432 99.7601 41.5093C100.347 42.4729 100.773 43.5004 101.04 44.592C101.253 45.5147 101.317 46.48 101.333 48M69.3334 16V30.9333C69.3334 36.9067 69.3334 39.8933 70.4961 42.176C71.5187 44.183 73.1504 45.8147 75.1574 46.8373C77.4347 48 80.4214 48 86.3841 48H101.333" stroke="#D4D4D4" stroke-opacity="0.4" stroke-width="9.67" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-            <h3 className="mt-4 font-['Merriweather',serif] text-xl font-bold text-[#303d32]">Click to Download</h3>
-            <p className="mt-2 text-sm text-neutral-600">QR code will be available when app launches</p>
+            <h3 className="mt-3 font-['Merriweather',serif] text-lg font-bold text-[#303d32] md:text-xl">Click to Download</h3>
+            <p className="mt-2 text-xs text-neutral-600 md:text-sm">QR code will be available when app launches</p>
           </section>
 
-          <section className="w-full rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm md:p-12">
-            <h3 className="text-center font-['Merriweather',serif] text-2xl font-bold text-[#303d32]">What's Included</h3>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <section className="w-full rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm md:p-8 lg:p-12">
+            <h3 className="text-center font-['Merriweather',serif] text-xl font-bold text-[#303d32] md:text-2xl">What's Included</h3>
+            <div className="mt-6 grid gap-4 md:mt-8 md:gap-6 md:grid-cols-3">
               {featuresData.map((feature) => (
-                <article key={feature.id} className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#5171561a]">
+                <article key={feature.id} className="flex items-start gap-2 md:gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#5171561a] md:h-10 md:w-10">
                     {feature.icon}
                   </div>
                   <div>
-                    <h4 className="font-['Merriweather',serif] text-base font-bold text-[#303d32]">{feature.title}</h4>
-                    <p className="mt-2 text-sm leading-6 text-neutral-600">{feature.description}</p>
+                    <h4 className="font-['Merriweather',serif] text-sm font-bold text-[#303d32] md:text-base">{feature.title}</h4>
+                    <p className="mt-1 text-xs leading-5 text-neutral-600 md:mt-2 md:text-sm md:leading-6">{feature.description}</p>
                   </div>
                 </article>
               ))}
             </div>
           </section>
 
-          <p className="text-sm text-neutral-500">
+          <p className="text-xs text-neutral-500 md:text-sm">
             <span className="font-bold">System Requirements:</span> ARCore support for Android
           </p>
         </div>
       </main>
 
-      <footer className="bg-[#517156] px-6 py-8 text-center text-sm text-neutral-200 md:px-10">
+      <footer className="bg-[#517156] px-4 py-6 text-center text-xs text-neutral-200 md:px-10 md:py-8 md:text-sm">
         © 2026 GreenAtlas. Promoting plant biodiversity awareness and conservation education.
       </footer>
     </div>
