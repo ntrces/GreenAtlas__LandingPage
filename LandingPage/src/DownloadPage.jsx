@@ -1,3 +1,4 @@
+import { QRCodeCanvas } from 'qrcode.react'
 import Logo from './assets/Logo.png'
 
 const featuresData = [
@@ -40,6 +41,8 @@ const featuresData = [
 ]
 
 export default function DownloadPage() {
+  const downloadUrl = `${window.location.origin}/GreenAtlas.apk`
+
   return (
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur md:px-10 md:py-3">
@@ -67,17 +70,74 @@ export default function DownloadPage() {
               Download GreenAtlas App
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-neutral-600 md:mt-6 md:text-base md:leading-8">
-              Experience the full power of AR botanical exploration on your mobile device. Download the GreenAtlas app for Android.
+              Experience the full power of AR botanical exploration on your mobile device. Scan the QR code to download for Android.
             </p>
           </section>
 
-          <section className="w-full rounded-2xl border border-neutral-200 bg-white p-4 text-center md:p-10">
-            <svg className="mx-auto block" width="80" height="80" md:width="128" md:height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="128" height="128" fill="white" fill-opacity="0.6"/>
-<path d="M64.0001 64V96M64.0001 96L80.0001 85.3333M64.0001 96L48.0001 85.3333M69.3334 16H43.7334C37.7601 16 34.7734 16 32.4907 17.1627C30.4838 18.1853 28.852 19.817 27.8294 21.824C26.6667 24.1067 26.6667 27.0933 26.6667 33.0667V94.9333C26.6667 100.907 26.6667 103.893 27.8294 106.176C28.852 108.183 30.4838 109.815 32.4907 110.837C34.7681 112 37.7547 112 43.7174 112H84.2827C90.2454 112 93.2267 112 95.5041 110.837C97.5147 109.813 99.1467 108.181 100.171 106.176C101.333 103.893 101.333 100.917 101.333 94.9547V48M69.3334 16C70.8587 16.016 71.8187 16.0747 72.7414 16.2933C73.8365 16.56 74.8641 16.9867 75.8241 17.5733C76.9014 18.2347 77.8241 19.1573 79.6641 21.0027L96.3361 37.6693C98.1814 39.5147 99.0987 40.432 99.7601 41.5093C100.347 42.4729 100.773 43.5004 101.04 44.592C101.253 45.5147 101.317 46.48 101.333 48M69.3334 16V30.9333C69.3334 36.9067 69.3334 39.8933 70.4961 42.176C71.5187 44.183 73.1504 45.8147 75.1574 46.8373C77.4347 48 80.4214 48 86.3841 48H101.333" stroke="#D4D4D4" stroke-opacity="0.4" stroke-width="9.67" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-            <h3 className="mt-3 font-['Merriweather',serif] text-lg font-bold text-[#303d32] md:text-xl">Click to Download</h3>
-            <p className="mt-2 text-xs text-neutral-600 md:text-sm">QR code will be available when app launches</p>
+          <section className="w-full rounded-2xl border border-neutral-200 bg-white p-6 text-center md:p-12">
+            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#5171561a] md:h-20 md:w-20">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 15L12 3M12 15L8 11M12 15L16 11" stroke="#517156" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L2 18C2 19.6569 3.34315 21 5 21L19 21C20.6569 21 22 19.6569 22 18L22 17" stroke="#517156" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <h3 className="font-['Merriweather',serif] text-xl font-bold text-[#303d32] md:text-2xl">Get GreenAtlas for Android</h3>
+            <p className="mt-2 text-sm text-neutral-600">Scan the QR code below to download the official APK.</p>
+            
+            <div className="mt-8 flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
+              <div className="flex flex-col items-center gap-4">
+                <div className="group relative overflow-hidden rounded-2xl border-4 border-[#303d32] bg-white p-4 shadow-xl transition-all hover:scale-105">
+                  <QRCodeCanvas 
+                    value={downloadUrl} 
+                    size={180} 
+                    level="H" 
+                    includeMargin={false}
+                    imageSettings={{
+                      src: Logo,
+                      x: undefined,
+                      y: undefined,
+                      height: 40,
+                      width: 40,
+                      excavate: true,
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-white/10 opacity-0 transition-opacity group-hover:opacity-100">
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#303d32]">Scan to Download</span>
+                  <a href={downloadUrl} download className="mt-1 text-[10px] text-neutral-500 underline hover:text-[#517156]">
+                    Or click here to download directly
+                  </a>
+                </div>
+              </div>
+
+              <div className="hidden h-40 w-px bg-neutral-200 md:block"></div>
+
+              <div className="flex flex-col items-center gap-4">
+                <a 
+                  href="/app/index.html" 
+                  className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-white px-8 py-4 text-[#303d32] transition-all hover:bg-[#f8faf8] hover:shadow-lg active:scale-95"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 3C14.5013 5.43828 15.9228 8.63803 16 12C15.9228 15.362 14.5013 18.5617 12 21C9.49872 18.5617 8.07725 15.362 8 12C8.07725 8.63803 9.49872 5.43828 12 3V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-[10px] uppercase tracking-wider opacity-70">Browser Access</div>
+                    <div className="font-bold">Launch Web App</div>
+                  </div>
+                </a>
+                <p className="max-w-[200px] text-center text-xs text-neutral-500">
+                  Prefer not to install? Try our lightweight web version instead.
+                </p>
+              </div>
+            </div>
+            
+            <p className="mt-6 text-xs text-neutral-500">
+              APK Size: ~104 MB • Web: Any modern browser
+            </p>
           </section>
 
           <section className="w-full rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm md:p-8 lg:p-12">
