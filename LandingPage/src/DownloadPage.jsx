@@ -41,7 +41,7 @@ const featuresData = [
 ]
 
 export default function DownloadPage() {
-  const downloadUrl = `${window.location.origin}/GreenAtlas.apk`
+  const downloadUrl = `${window.location.origin}/get-app`
 
   return (
     <div className="min-h-screen bg-white">
@@ -106,7 +106,7 @@ export default function DownloadPage() {
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-xs font-bold uppercase tracking-widest text-[#303d32]">Scan to Download</span>
-                  <a href={downloadUrl} download className="mt-1 text-[10px] text-neutral-500 underline hover:text-[#517156]">
+                  <a href="/GreenAtlas.apk" download className="mt-1 text-[10px] text-neutral-500 underline hover:text-[#517156]">
                     Or click here to download directly
                   </a>
                 </div>
