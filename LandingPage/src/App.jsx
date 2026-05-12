@@ -419,7 +419,7 @@ function App() {
                         {announcement.headline_title || announcement.title}
                       </h3>
                       
-                      <p className="mt-4 flex-grow text-base leading-relaxed text-neutral-600">
+                      <p className="mt-4 grow text-base leading-relaxed text-neutral-600">
                         {announcement.content}
                       </p>
                       

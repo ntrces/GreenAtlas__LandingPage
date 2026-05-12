@@ -117,7 +117,7 @@ export default function DownloadPage() {
               <div className="flex flex-col items-center gap-4">
                 <a 
                   href="/app/index.html" 
-                  className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-white px-8 py-4 text-[#303d32] transition-all hover:bg-[#f8faf8] hover:shadow-lg active:scale-95"
+                  className="group relative flex w-full 'max-w-[240px]' items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-white px-8 py-4 text-[#303d32] transition-all hover:bg-[#f8faf8] hover:shadow-lg active:scale-95"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -129,7 +129,7 @@ export default function DownloadPage() {
                     <div className="font-bold">Launch Web App</div>
                   </div>
                 </a>
-                <p className="max-w-[200px] text-center text-xs text-neutral-500">
+                <p className="'max-w-[200px]' text-center text-xs text-neutral-500">
                   Prefer not to install? Try our lightweight web version instead.
                 </p>
               </div>
