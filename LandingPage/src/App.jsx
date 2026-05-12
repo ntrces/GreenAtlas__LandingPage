@@ -383,7 +383,7 @@ function App() {
           </div>
         </section>
 
-        <section id="announcements" className="scroll-mt-28 bg-[#f8faf8] px-4 py-16 md:px-8 md:py-24">
+        <section id="announcements" className="scroll-mt-28 bg-linear-to-b from-[#ffffff] to-[#b6c6b8] px-4 py-16 md:px-8 md:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto max-w-4xl text-center">
               <h2 className="font-['Merriweather',serif] text-4xl font-bold text-[#303d32]">
@@ -447,13 +447,25 @@ function App() {
                 </div>
               )}
             </div>
+
+            <div className="mt-12 flex justify-center">
+              <button 
+                onClick={() => document.getElementById('announcements').scrollIntoView({ behavior: 'smooth' })}
+                className="flex items-center gap-2 rounded-full border-2 border-[#517156] px-8 py-3 text-base font-semibold text-[#517156] transition-all hover:bg-[#517156] hover:text-white"
+              >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                View All Announcements
+              </button>
+            </div>
           </div>
         </section>
 
 
         <section
           id="ar-gallery"
-          className="scroll-mt-12 bg-linear-to-b from-[#b6c6b8] to-[#f8faf8] px-4 py-8 md:scroll-mt-15 md:px-8 md:py-24"
+          className="scroll-mt-12 bg-linear-to-b from-[#b6c6b8] to-[#ffffff] px-4 py-8 md:scroll-mt-15 md:px-8 md:py-24"
         >
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start">
             <div className="h-130 rounded-3xl bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${arGalleryImage})` }} />
