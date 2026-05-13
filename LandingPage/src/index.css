@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500&family=Merriweather:wght@700&family=Poppins:wght@500;600&display=swap');
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arimo', Arial, sans-serif;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
