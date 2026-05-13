@@ -26,7 +26,7 @@ export default function History({ officerName, onClose }) {
              <span>🕒 2026-02-15 08:30 AM</span>
              <span>👥 2 observers</span>
           </div>
-          <p className="text-xs font-bold text-emerald-600/40 mt-3">1 wildlife, 0 other observations</p>
+          <p className="text-xs font-bold text-emerald-600/40 mt-3">1 wildlXXXife, 0 other observations</p>
         </div>
 
         {/* You can map more entries here */}

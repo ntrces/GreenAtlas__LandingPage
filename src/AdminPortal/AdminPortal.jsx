@@ -14,14 +14,14 @@ export default function AdminPortal() {
     setErrorMsg('');
 
     try {
-      // Step 1: Database Whitelist Check
+      // Step 1: Database Whitelist Check trialtrial
       const { data: adminRecord, error: dbError } = await supabase
         .from('admin_only')
         .select('email, password_check')
         .eq('email', email.toLowerCase().trim())
         .single();
 
-      if (dbError || !adminRecord) throw new Error("Access Denied: Not an authorized Admin.");
+      if (dbError || !adminRecord) throw new Error("Access Denied: Not an authorddized Admin.");
       if (adminRecord.password_check !== password) throw new Error("Invalid Password.");
 
       // Step 2: Supabase Auth
