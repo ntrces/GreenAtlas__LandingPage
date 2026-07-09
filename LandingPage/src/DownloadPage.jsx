@@ -1,5 +1,6 @@
 import { QRCodeCanvas } from 'qrcode.react'
 import Logo from './assets/Logo.png'
+import qrCode from './assets/qr-code.png';
 
 const featuresData = [
   {
@@ -73,8 +74,7 @@ export default function DownloadPage() {
               Experience the full power of AR botanical exploration on your mobile device. Scan the QR code to download for Android.
             </p>
           </section>
-
-          <section className="w-full rounded-2xl border border-neutral-200 bg-white p-6 text-center md:p-12">
+<section className="w-full rounded-2xl border border-neutral-200 bg-white p-6 text-center md:p-12">
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#5171561a] md:h-20 md:w-20">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 15L12 3M12 15L8 11M12 15L16 11" stroke="#517156" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -87,28 +87,13 @@ export default function DownloadPage() {
             <div className="mt-8 flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
               <div className="flex flex-col items-center gap-4">
                 <div className="group relative overflow-hidden rounded-2xl border-4 border-[#303d32] bg-white p-4 shadow-xl transition-all hover:scale-105">
-                  <QRCodeCanvas 
-                    value={downloadUrl} 
-                    size={180} 
-                    level="H" 
-                    includeMargin={false}
-                    imageSettings={{
-                      src: Logo,
-                      x: undefined,
-                      y: undefined,
-                      height: 40,
-                      width: 40,
-                      excavate: true,
-                    }}
-                  />
+                  <img src={qrCode} alt="Scan to download" className="h-[180px] w-[180px]" />
                   <div className="absolute inset-0 flex items-center justify-center bg-white/10 opacity-0 transition-opacity group-hover:opacity-100">
                   </div>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-xs font-bold uppercase tracking-widest text-[#303d32]">Scan to Download</span>
-                  <a href="/GreenAtlas.apk" download className="mt-1 text-[10px] text-neutral-500 underline hover:text-[#517156]">
-                    Or click here to download directly
-                  </a>
+                  
                 </div>
               </div>
 
