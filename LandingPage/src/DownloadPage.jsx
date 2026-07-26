@@ -1,6 +1,4 @@
-import { QRCodeCanvas } from 'qrcode.react'
 import Logo from './assets/Logo.png'
-import qrCode from './assets/qr-code.png';
 
 const featuresData = [
   {
@@ -71,10 +69,11 @@ export default function DownloadPage() {
               Download GreenAtlas App
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-neutral-600 md:mt-6 md:text-base md:leading-8">
-              Experience the full power of AR botanical exploration on your mobile device. Scan the QR code to download for Android.
+              Experience the full power of AR botanical exploration on your mobile device. Download the official APK for Android.
             </p>
           </section>
-<section className="w-full rounded-2xl border border-neutral-200 bg-white p-6 text-center md:p-12">
+
+          <section className="w-full rounded-2xl border border-neutral-200 bg-white p-6 text-center md:p-12">
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#5171561a] md:h-20 md:w-20">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 15L12 3M12 15L8 11M12 15L16 11" stroke="#517156" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -82,22 +81,30 @@ export default function DownloadPage() {
               </svg>
             </div>
             <h3 className="font-['Merriweather',serif] text-xl font-bold text-[#303d32] md:text-2xl">Get GreenAtlas for Android</h3>
-            <p className="mt-2 text-sm text-neutral-600">Scan the QR code below to download the official APK.</p>
+            <p className="mt-2 text-sm text-neutral-600">Click the button below to download the official APK directly.</p>
             
-            <div className="mt-8 flex flex-col items-center justify-center gap-8 md:flex-row md:items-start">
+            <div className="mt-8 flex flex-col items-center justify-center gap-8 md:flex-row md:items-center">
               <div className="flex flex-col items-center gap-4">
-                <div className="group relative overflow-hidden rounded-2xl border-4 border-[#303d32] bg-white p-4 shadow-xl transition-all hover:scale-105">
-                  <img src={qrCode} alt="Scan to download" className="h-[180px] w-[180px]" />
-                  <div className="absolute inset-0 flex items-center justify-center bg-white/10 opacity-0 transition-opacity group-hover:opacity-100">
+                <a 
+                  href="/app-release.apk" 
+                  download="GreenAtlas.apk"
+                  className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-[#303d32] px-8 py-4 text-white transition-all hover:bg-[#242f26] hover:shadow-lg active:scale-95 cursor-pointer"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15L12 3M12 15L8 11M12 15L16 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17L2 18C2 19.6569 3.34315 21 5 21L19 21C20.6569 21 22 19.6569 22 18L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-[10px] font-medium uppercase tracking-wider opacity-80">Android Package</div>
+                    <div className="font-bold text-sm">Download APK</div>
                   </div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#303d32]">Scan to Download</span>
-                  
-                </div>
+                </a>
+                <p className="max-w-[200px] text-center text-xs text-neutral-500">
+                  Direct download for Android mobile devices.
+                </p>
               </div>
 
-              <div className="hidden h-40 w-px bg-neutral-200 md:block"></div>
+              <div className="hidden h-24 w-px bg-neutral-200 md:block"></div>
 
               <div className="flex flex-col items-center gap-4">
                 <a 
@@ -111,7 +118,7 @@ export default function DownloadPage() {
                   </svg>
                   <div className="text-left">
                     <div className="text-[10px] uppercase tracking-wider opacity-70">Browser Access</div>
-                    <div className="font-bold">Launch Web App</div>
+                    <div className="font-bold text-sm">Launch Web App</div>
                   </div>
                 </a>
                 <p className="max-w-[200px] text-center text-xs text-neutral-500">
