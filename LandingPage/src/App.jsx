@@ -268,6 +268,20 @@ const fallbackAnnouncements = [
     location: 'Trece Martires City Hall - Conference Room',
     contact: 'greenatlas.support@email.com',
   },
+  {
+    headline_title: 'Wildlife Photography Contest',
+    event_date: 'July 15, 2026',
+    content: 'Capture the beauty of nature and win prizes. Open to all amateur photographers. Submit your best shots taken within the protected areas.',
+    location: 'Online Submission',
+    contact: 'contest@greenatlas.org',
+  },
+  {
+    headline_title: 'Eco-Tourism Seminar',
+    event_date: 'August 5, 2026',
+    content: 'Learn about sustainable eco-tourism practices and how you can contribute to preserving our natural heritage while promoting local tourism.',
+    location: 'Cavite Convention Center',
+    contact: 'seminar@greenatlas.org',
+  },
 ]
 
 
@@ -279,6 +293,15 @@ function App() {
 
   useEffect(() => {
     fetchAnnouncements()
+    
+    // Handle initial hash routing
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1)
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
   }, [])
 
   const fetchAnnouncements = async () => {
@@ -394,32 +417,32 @@ function App() {
               </p>
             </div>
 
-            <div className="mt-12 flex flex-wrap justify-center gap-8">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {loading ? (
                 <div className="col-span-full py-20 text-center">
                   <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-[#517156] border-t-transparent" />
                   <p className="mt-4 text-neutral-500">Fetching latest announcements...</p>
                 </div>
               ) : announcements.length > 0 ? (
-                announcements.map((announcement, index) => (
+                announcements.slice(0, 3).map((announcement, index) => (
                   <article
                     key={index}
-                    className="group relative w-full md:w-[calc(50%-1rem)] max-w-2xl overflow-hidden rounded-3xl border border-[#51715622] bg-white p-8 shadow-sm transition-all hover:shadow-md"
+                    className="group relative w-full h-full overflow-hidden rounded-3xl border border-[#51715622] bg-white p-6 shadow-sm transition-all hover:shadow-md flex flex-col"
                   >
                     <div className="absolute top-0 left-0 h-1.5 w-full bg-[#517156]" />
                     <div className="flex flex-col h-full">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-[#517156] uppercase tracking-wider">
+                        <span className="text-xs lg:text-sm font-semibold text-[#517156] uppercase tracking-wider">
                           Upcoming Event
                         </span>
-                        <span className="text-sm text-neutral-400">{announcement.event_date || announcement.date}</span>
+                        <span className="text-xs lg:text-sm text-neutral-400">{announcement.event_date || announcement.date}</span>
                       </div>
                       
-                      <h3 className="mt-4 font-['Merriweather',serif] text-2xl font-bold text-[#303d32] group-hover:text-[#517156] transition-colors">
+                      <h3 className="mt-4 font-['Merriweather',serif] text-xl lg:text-2xl font-bold text-[#303d32] group-hover:text-[#517156] transition-colors">
                         {announcement.headline_title || announcement.title}
                       </h3>
                       
-                      <p className="mt-4 flex-grow text-base leading-relaxed text-neutral-600">
+                      <p className="mt-3 flex-grow text-sm lg:text-base leading-relaxed text-neutral-600">
                         {announcement.content}
                       </p>
                       
@@ -448,17 +471,21 @@ function App() {
               )}
             </div>
 
-            <div className="mt-12 flex justify-center">
-              <button 
-                onClick={() => document.getElementById('announcements').scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 rounded-full border-2 border-[#517156] px-8 py-3 text-base font-semibold text-[#517156] transition-all hover:bg-[#517156] hover:text-white"
-              >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                View All Announcements
-              </button>
-            </div>
+            {announcements.length > 3 && (
+              <div className="mt-12 flex justify-center">
+                <button 
+                  onClick={() => {
+                    window.location.href = '/announcements'
+                  }}
+                  className="flex items-center gap-2 rounded-full border-2 border-[#517156] px-8 py-3 text-sm lg:text-base font-semibold text-[#517156] transition-all hover:bg-[#517156] hover:text-white"
+                >
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  View All Announcements
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
@@ -732,6 +759,54 @@ function App() {
             © 2026 GreenAtlas. Promoting plant biodiversity awareness and
             conservation education.
           </p>
+
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+            <a 
+              href="https://www.gbif.org/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group transition-all hover:scale-110 opacity-70 hover:opacity-100"
+              title="GBIF - Global Biodiversity Information Facility"
+            >
+               <img src="https://www.google.com/s2/favicons?domain=gbif.org&sz=128" alt="GBIF" className="h-6 w-6 rounded-full bg-white p-0.5" />
+            </a>
+            <a 
+              href="http://www.stuartxchange.org/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group transition-all hover:scale-110 opacity-70 hover:opacity-100"
+              title="StuartXchange - Philippine Alternative Medicine"
+            >
+               <img src="https://www.google.com/s2/favicons?domain=stuartxchange.org&sz=128" alt="StuartXchange" className="h-6 w-6 rounded-full bg-white p-0.5" />
+            </a>
+            <a 
+              href="https://www.globinmed.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group transition-all hover:scale-110 opacity-70 hover:opacity-100"
+              title="GLOBinMED"
+            >
+               <img src="https://www.google.com/s2/favicons?domain=globinmed.com&sz=128" alt="GLOBinMED" className="h-6 w-6 rounded-full bg-white p-0.5" />
+            </a>
+            <a 
+              href="https://www.philippineplants.org/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group transition-all hover:scale-110 opacity-70 hover:opacity-100"
+              title="Co's Digital Flora of the Philippines"
+            >
+               <img src="https://www.google.com/s2/favicons?domain=philippineplants.org&sz=128" alt="Co's Digital Flora" className="h-6 w-6 rounded-full bg-white p-0.5" />
+            </a>
+            <a 
+              href="https://www.worldfloraonline.org/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group transition-all hover:scale-110 opacity-70 hover:opacity-100"
+              title="World Flora Online"
+            >
+               <img src="https://www.google.com/s2/favicons?domain=worldfloraonline.org&sz=128" alt="World Flora Online" className="h-6 w-6 rounded-full bg-white p-0.5" />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
