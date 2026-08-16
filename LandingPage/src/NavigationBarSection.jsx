@@ -55,11 +55,20 @@ export const NavigationBarSection = () => {
 
   const scrollToTopSection = () => {
     setActiveTargetId(null)
+    if (window.location.pathname !== '/' && window.location.pathname !== '') {
+      window.location.href = '/'
+      return
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const scrollToSection = (targetId) => {
     setActiveTargetId(targetId)
+
+    if (window.location.pathname !== '/' && window.location.pathname !== '') {
+      window.location.href = `/#${targetId}`
+      return
+    }
 
     const section = document.getElementById(targetId)
     if (!section) return
