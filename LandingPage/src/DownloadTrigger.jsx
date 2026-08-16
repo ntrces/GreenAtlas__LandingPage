@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 
+const downloadUrl = 'https://github.com/ntrces/GreenAtlas/releases/latest/download/GreenAtlas.apk'
+
 export default function DownloadTrigger() {
   useEffect(() => {
     // Small delay to ensure the UI renders before the browser starts the download/redirect
     const timer = setTimeout(() => {
-      window.location.href = '/GreenAtlas.apk'
+      window.location.href = downloadUrl
     }, 1000)
     
     return () => clearTimeout(timer)
@@ -33,8 +35,7 @@ export default function DownloadTrigger() {
           If the download doesn't start in a few seconds,
         </p>
         <a 
-          href="/GreenAtlas.apk" 
-          download 
+          href={downloadUrl}
           className="mt-2 inline-block font-bold text-[#517156] underline hover:text-[#3c5a41]"
         >
           Click here to try again
