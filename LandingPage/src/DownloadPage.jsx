@@ -38,7 +38,7 @@ const featuresData = [
 ]
 
 export default function DownloadPage() {
-  const downloadUrl = 'https://greenatlas.info/GreenAtlas.apk'
+  const downloadUrl = 'https://github.com/ntrces/GreenAtlas/releases/latest/download/GreenAtlas.apk'
 
   return (
     <div className="min-h-screen bg-white">
@@ -129,7 +129,7 @@ export default function DownloadPage() {
             </div>
             
             <p className="mt-6 text-xs text-neutral-500">
-              APK Size: 171.88 MB • Compatible with Android 8.0+
+              APK Size: ~221 MB • Compatible with Android 8.0+
             </p>
           </section>
 
