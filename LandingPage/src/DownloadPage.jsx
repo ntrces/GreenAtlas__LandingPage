@@ -10,8 +10,7 @@ const featuresData = [
       </svg>
     ),
     title: 'Detailed Plant Information',
-    description:
-      'Access to structured data, including classification, characteristics, and importance.',
+    description: 'Access to structured data, including classification, characteristics, and importance.',
   },
   {
     id: 2,
@@ -22,8 +21,7 @@ const featuresData = [
       </svg>
     ),
     title: 'Interactive AR Visualization',
-    description:
-      'View plant species in augmented reality for a more immersive and engaging learning experience.',
+    description: 'View plant species in augmented reality for a more immersive and engaging learning experience.',
   },
   {
     id: 3,
@@ -34,14 +32,11 @@ const featuresData = [
       </svg>
     ),
     title: 'Verified Species Data',
-    description:
-      'All plant information is carefully documented and validated for accuracy.',
+    description: 'All plant information is carefully documented and validated for accuracy.',
   },
 ]
 
 export default function DownloadPage() {
-  const downloadUrl = 'https://github.com/ntrces/GreenAtlas/releases/latest/download/GreenAtlas.apk'
-
   return (
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur md:px-10 md:py-3">
@@ -83,10 +78,11 @@ export default function DownloadPage() {
             <h3 className="font-['Merriweather',serif] text-xl font-bold text-[#303d32] md:text-2xl">Get GreenAtlas for Android</h3>
             <p className="mt-2 text-sm text-neutral-600">Click the button below to download the official APK directly.</p>
             
-            <div className="mt-8 flex flex-col items-center justify-center gap-8 md:flex-row md:items-center">
+            <div className="mt-8 flex justify-center">
               <div className="flex flex-col items-center gap-4">
                 <a
-                  href={downloadUrl}
+                  href="/GreenAtlas.apk"
+                  download="GreenAtlas.apk"
                   className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-[#303d32] px-8 py-4 text-white transition-all hover:bg-[#242f26] hover:shadow-lg active:scale-95 cursor-pointer"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,33 +98,218 @@ export default function DownloadPage() {
                   Direct download for Android mobile devices.
                 </p>
               </div>
-
-              <div className="hidden h-24 w-px bg-neutral-200 md:block"></div>
-
-              <div className="flex flex-col items-center gap-4">
-                <a 
-                  href="/app/index.html" 
-                  className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-white px-8 py-4 text-[#303d32] transition-all hover:bg-[#f8faf8] hover:shadow-lg active:scale-95"
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 3C14.5013 5.43828 15.9228 8.63803 16 12C15.9228 15.362 14.5013 18.5617 12 21C9.49872 18.5617 8.07725 15.362 8 12C8.07725 8.63803 9.49872 5.43828 12 3V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-[10px] uppercase tracking-wider opacity-70">Browser Access</div>
-                    <div className="font-bold text-sm">Launch Web App</div>
-                  </div>
-                </a>
-                <p className="max-w-[200px] text-center text-xs text-neutral-500">
-                  Prefer not to install? Try our lightweight web version instead.
-                </p>
-              </div>
             </div>
             
             <p className="mt-6 text-xs text-neutral-500">
-              APK Size: ~221 MB • Web: Any modern browser
+              APK Size: 171.88 MB
             </p>
+          </section>
+
+          {/* User Manual for APK / Onboarding Guide */}
+          <section className="w-full rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm md:p-10 lg:p-12">
+            <div className="flex flex-col items-center text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#5171561a] px-3.5 py-1 text-xs font-semibold text-[#517156]">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                New User Guide
+              </span>
+              <h3 className="mt-3 font-['Merriweather',serif] text-2xl font-bold text-[#303d32] md:text-3xl">
+                User Manual for APK
+              </h3>
+              <p className="mt-2 max-w-xl text-xs text-neutral-600 md:text-sm">
+                Follow this step-by-step guide after downloading and installing GreenAtlas on your mobile device.
+              </p>
+            </div>
+
+            <div className="mt-8 space-y-8 md:mt-10 md:space-y-10">
+              <div>
+                <h4 className="flex items-center gap-2 font-['Poppins',Helvetica] text-base font-bold text-[#303d32] md:text-lg">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#303d32] text-xs font-bold text-white">
+                    1
+                  </span>
+                  Getting Started & Account Setup
+                </h4>
+
+                <div className="mt-4 grid gap-4 md:grid-cols-2 lg:gap-6">
+                  {/* Step 1.1 */}
+                  <div className="rounded-2xl border border-neutral-100 bg-[#f9fbf9] p-5 transition-all hover:border-[#51715640] hover:shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e5f5e8] text-[#517156]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-semibold text-[#517156] uppercase tracking-wider">
+                          Step 1.1
+                        </span>
+                        <h5 className="font-['Merriweather',serif] text-sm font-bold text-[#303d32] md:text-base">
+                          First-Time Launch & Walkthrough
+                        </h5>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-xs text-neutral-600 md:text-sm">
+                      When you open GreenAtlas for the first time:
+                    </p>
+                    <ul className="mt-3 space-y-2 text-xs leading-relaxed text-neutral-700 md:text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          <strong className="font-semibold text-[#303d32]">Welcome Tour:</strong> Swipe through the introduction screens to learn about the mission, features, and tools available in GreenAtlas.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          <strong className="font-semibold text-[#303d32]">Skip or Finish:</strong> You may tap <code className="rounded bg-[#e5f5e8] px-1.5 py-0.5 text-xs font-semibold text-[#303d32]">Skip</code> at any time to proceed directly to the authentication screen, or complete the walkthrough by tapping <code className="rounded bg-[#303d32] px-1.5 py-0.5 text-xs font-semibold text-white">Get Started</code>.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Step 1.2 */}
+                  <div className="rounded-2xl border border-neutral-100 bg-[#f9fbf9] p-5 transition-all hover:border-[#51715640] hover:shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e5f5e8] text-[#517156]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                          <circle cx="8.5" cy="7" r="4"/>
+                          <line x1="20" y1="8" x2="20" y2="14"/>
+                          <line x1="23" y1="11" x2="17" y2="11"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-semibold text-[#517156] uppercase tracking-wider">
+                          Step 1.2
+                        </span>
+                        <h5 className="font-['Merriweather',serif] text-sm font-bold text-[#303d32] md:text-base">
+                          Account Registration (Sign Up)
+                        </h5>
+                      </div>
+                    </div>
+                    <ul className="mt-3 space-y-2 text-xs leading-relaxed text-neutral-700 md:text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          On the launch screen, select <code className="rounded bg-[#e5f5e8] px-1.5 py-0.5 text-xs font-semibold text-[#303d32]">Sign Up</code>.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <div>
+                          <span>Fill in your details:</span>
+                          <ul className="mt-1.5 space-y-1 pl-3 text-xs text-neutral-600">
+                            <li>• Full Name</li>
+                            <li>• Email Address</li>
+                            <li>• Password (must meet security requirements)</li>
+                            <li>
+                              • Role Selection (<span className="font-medium text-[#303d32]">Standard User / Visitor</span> or <span className="font-medium text-[#303d32]">Employee / Field Officer</span>)
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          Tap <code className="rounded bg-[#303d32] px-1.5 py-0.5 text-xs font-semibold text-white">Create Account</code>.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Step 1.3 */}
+                  <div className="rounded-2xl border border-neutral-100 bg-[#f9fbf9] p-5 transition-all hover:border-[#51715640] hover:shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e5f5e8] text-[#517156]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-semibold text-[#517156] uppercase tracking-wider">
+                          Step 1.3
+                        </span>
+                        <h5 className="font-['Merriweather',serif] text-sm font-bold text-[#303d32] md:text-base">
+                          Logging In
+                        </h5>
+                      </div>
+                    </div>
+                    <ul className="mt-3 space-y-2 text-xs leading-relaxed text-neutral-700 md:text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>Open the login screen.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>Enter your registered Email Address and Password.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          Tap <code className="rounded bg-[#303d32] px-1.5 py-0.5 text-xs font-semibold text-white">Log In</code>.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>Upon successful login, you will be taken directly to your personalized dashboard based on your user role.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Step 1.4 */}
+                  <div className="rounded-2xl border border-neutral-100 bg-[#f9fbf9] p-5 transition-all hover:border-[#51715640] hover:shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e5f5e8] text-[#517156]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                          <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[11px] font-semibold text-[#517156] uppercase tracking-wider">
+                          Step 1.4
+                        </span>
+                        <h5 className="font-['Merriweather',serif] text-sm font-bold text-[#303d32] md:text-base">
+                          Profile Setup & Management
+                        </h5>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-xs text-neutral-600 md:text-sm">
+                      You can update your personal information and security settings at any time:
+                    </p>
+                    <ul className="mt-3 space-y-2 text-xs leading-relaxed text-neutral-700 md:text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          Open the side menu or navigation bar and tap <code className="rounded bg-[#e5f5e8] px-1.5 py-0.5 text-xs font-semibold text-[#303d32]">Profile</code>.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          <strong className="font-semibold text-[#303d32]">Edit Profile:</strong> Update your profile picture, display name, contact information, or bio. Tap <code className="rounded bg-[#303d32] px-1.5 py-0.5 text-xs font-semibold text-white">Save Changes</code>.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          <strong className="font-semibold text-[#303d32]">Change Password:</strong> Select Change Password, enter your current password followed by your new password, and confirm.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#517156]"></span>
+                        <span>
+                          <strong className="font-semibold text-[#303d32]">Theme Customization:</strong> Toggle between Light Mode and Dark Mode to suit your viewing preferences.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section className="w-full rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm md:p-8 lg:p-12">

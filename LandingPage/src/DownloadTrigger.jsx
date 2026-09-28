@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const downloadUrl = 'https://github.com/ntrces/GreenAtlas/releases/latest/download/GreenAtlas.apk'
+const downloadUrl = '/GreenAtlas.apk'
 
 export default function DownloadTrigger() {
   useEffect(() => {
