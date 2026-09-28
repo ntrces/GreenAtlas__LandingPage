@@ -1,3 +1,4 @@
+import { QRCodeCanvas } from 'qrcode.react'
 import Logo from './assets/Logo.png'
 
 const featuresData = [
@@ -37,6 +38,8 @@ const featuresData = [
 ]
 
 export default function DownloadPage() {
+  const downloadUrl = 'https://greenatlas.info/GreenAtlas.apk'
+
   return (
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur md:px-10 md:py-3">
@@ -64,7 +67,7 @@ export default function DownloadPage() {
               Download GreenAtlas App
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-neutral-600 md:mt-6 md:text-base md:leading-8">
-              Experience the full power of AR botanical exploration on your mobile device. Download the official APK for Android.
+              Experience the full power of AR botanical exploration on your mobile device. Scan the QR code or download the official APK for Android.
             </p>
           </section>
 
@@ -76,12 +79,37 @@ export default function DownloadPage() {
               </svg>
             </div>
             <h3 className="font-['Merriweather',serif] text-xl font-bold text-[#303d32] md:text-2xl">Get GreenAtlas for Android</h3>
-            <p className="mt-2 text-sm text-neutral-600">Click the button below to download the official APK directly.</p>
+            <p className="mt-2 text-sm text-neutral-600">Scan the QR code with your phone camera or click the button below to download directly.</p>
             
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex flex-col items-center justify-center gap-8 md:flex-row md:items-center">
+              {/* QR Code Container */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="rounded-2xl border-2 border-[#51715633] bg-white p-3.5 shadow-md transition-transform hover:scale-105">
+                  <QRCodeCanvas 
+                    value={downloadUrl} 
+                    size={170} 
+                    level="H" 
+                    marginSize={1}
+                    imageSettings={{
+                      src: Logo,
+                      height: 36,
+                      width: 36,
+                      excavate: true,
+                    }}
+                  />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#303d32]">Scan to Download</span>
+                <p className="max-w-[200px] text-center text-xs text-neutral-500">
+                  Point your phone's camera to download directly to your mobile device.
+                </p>
+              </div>
+
+              <div className="hidden h-40 w-px bg-neutral-200 md:block"></div>
+
+              {/* Direct APK Download Button */}
               <div className="flex flex-col items-center gap-4">
                 <a
-                  href="/GreenAtlas.apk"
+                  href={downloadUrl}
                   download="GreenAtlas.apk"
                   className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-[#303d32] px-8 py-4 text-white transition-all hover:bg-[#242f26] hover:shadow-lg active:scale-95 cursor-pointer"
                 >
@@ -95,13 +123,13 @@ export default function DownloadPage() {
                   </div>
                 </a>
                 <p className="max-w-[200px] text-center text-xs text-neutral-500">
-                  Direct download for Android mobile devices.
+                  Direct APK file download for Android.
                 </p>
               </div>
             </div>
             
             <p className="mt-6 text-xs text-neutral-500">
-              APK Size: 171.88 MB
+              APK Size: 171.88 MB • Compatible with Android 8.0+
             </p>
           </section>
 
