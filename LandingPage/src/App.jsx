@@ -471,21 +471,6 @@ function App() {
               )}
             </div>
 
-            {announcements.length > 3 && (
-              <div className="mt-12 flex justify-center">
-                <button 
-                  onClick={() => {
-                    window.location.href = '/announcements'
-                  }}
-                  className="flex items-center gap-2 rounded-full border-2 border-[#517156] px-8 py-3 text-sm lg:text-base font-semibold text-[#517156] transition-all hover:bg-[#517156] hover:text-white"
-                >
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                  View All Announcements
-                </button>
-              </div>
-            )}
           </div>
         </section>
 
