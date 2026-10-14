@@ -40,7 +40,7 @@ const featuresData = [
 ]
 
 export default function DownloadPage() {
-  const downloadUrl = 'https://github.com/ntrces/GreenAtlas/releases/latest/download/GreenAtlas.apk'
+  const downloadUrl = `${import.meta.env.BASE_URL}GreenAtlas.apk`
 
   return (
     <div className="min-h-screen bg-white">
@@ -87,6 +87,7 @@ export default function DownloadPage() {
               <div className="flex flex-col items-center gap-4">
                 <a
                   href={downloadUrl}
+                  download="GreenAtlas.apk"
                   className="group relative flex w-full max-w-[240px] items-center gap-3 overflow-hidden rounded-xl border-2 border-[#303d32] bg-[#303d32] px-8 py-4 text-white transition-all hover:bg-[#242f26] hover:shadow-lg active:scale-95 cursor-pointer"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

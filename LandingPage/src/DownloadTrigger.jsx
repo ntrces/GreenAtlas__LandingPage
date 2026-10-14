@@ -1,12 +1,17 @@
 import { useEffect } from 'react'
 
-const downloadUrl = 'https://github.com/ntrces/GreenAtlas/releases/latest/download/GreenAtlas.apk'
+const downloadUrl = `${import.meta.env.BASE_URL}GreenAtlas.apk`
 
 export default function DownloadTrigger() {
   useEffect(() => {
     // Small delay to ensure the UI renders before the browser starts the download/redirect
     const timer = setTimeout(() => {
-      window.location.href = downloadUrl
+      const link = document.createElement('a')
+      link.href = downloadUrl
+      link.setAttribute('download', 'GreenAtlas.apk')
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
     }, 1000)
     
     return () => clearTimeout(timer)
@@ -36,6 +41,7 @@ export default function DownloadTrigger() {
         </p>
         <a 
           href={downloadUrl}
+          download="GreenAtlas.apk"
           className="mt-2 inline-block font-bold text-[#517156] underline hover:text-[#3c5a41]"
         >
           Click here to try again
